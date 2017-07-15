@@ -51,6 +51,14 @@ public class UserController {
     }
 
     @Modifying
+    @RequestMapping("adduser")
+    public Object addUser(@RequestBody UserInfo userEntity){
+        userInfoRepository.save(userEntity);
+        ResultMsg resultMsg = new ResultMsg(ResultStatusCode.OK.getErrcode(),ResultStatusCode.OK.getErrmsg(),userEntity);
+        return resultMsg;
+    }
+
+    @Modifying
     @RequestMapping("updateuser")
     public Object updateUser(@RequestBody UserInfo userEntity){
         UserInfo user = userInfoRepository.findUserInfoById(userEntity.getId());
