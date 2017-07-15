@@ -18,6 +18,17 @@ spring:
     properties:
           hibernate:
             dialect:org.hibernate.dialect.MySQL5Dialect
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+
+server:
+  tomcat:
+    uri-encoding: utf-8
+  port: 8080
+
 
 
 

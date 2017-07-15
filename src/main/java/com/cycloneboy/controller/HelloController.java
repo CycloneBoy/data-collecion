@@ -2,6 +2,8 @@ package com.cycloneboy.controller;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by CycloneBoy on 2017/7/14.
  */
 
-@RestController
+@Controller
 public class HelloController {
 
     @RequestMapping("/hello")
@@ -22,5 +24,9 @@ public class HelloController {
         return "this is user !";
     }
 
-
+   @RequestMapping("/index")
+    public String index(ModelMap map){
+        map.addAttribute("host","https://github.com/CycloneBoy");
+        return "index";
+   }
 }

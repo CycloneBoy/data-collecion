@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 @ComponentScan(basePackages = "com.cycloneboy")
 public class DataCollecionApplication {
 
-	@RequestMapping("/hello")
+	@RequestMapping("/hello123")
 	public String hello(){
 		return "hello world!";
 	}
 
-	@RequestMapping("/h")
+	@RequestMapping("/h123")
 	public String home(){
 		return "this is home !";
 	}
