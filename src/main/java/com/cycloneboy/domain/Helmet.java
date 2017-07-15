@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
+ * 头盔采集信息实体
  * Created by CycloneBoy on 2017/7/15.
  */
 @Entity
@@ -17,19 +18,19 @@ public class Helmet {
 
     private String name;
 
-    private float temperature;
+    private double temperature;
 
-    private float originalLongitude;
+    private double originalLongitude;
 
-    private float originalLatitude;
+    private double originalLatitude;
 
-    private float inertialNavigation;
+    private double inertialNavigation;
 
-    private float calibrationLongitude;
+    private double calibrationLongitude;
 
-    private float calibrationLatitude;
+    private double calibrationLatitude;
 
-    private float ecgSignal;
+    private double ecgSignal;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date time;
@@ -50,59 +51,59 @@ public class Helmet {
         this.name = name;
     }
 
-    public float getTemperature() {
+    public double getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(float temperature) {
+    public void setTemperature(double temperature) {
         this.temperature = temperature;
     }
 
-    public float getOriginalLongitude() {
+    public double getOriginalLongitude() {
         return originalLongitude;
     }
 
-    public void setOriginalLongitude(float originalLongitude) {
+    public void setOriginalLongitude(double originalLongitude) {
         this.originalLongitude = originalLongitude;
     }
 
-    public float getOriginalLatitude() {
+    public double getOriginalLatitude() {
         return originalLatitude;
     }
 
-    public void setOriginalLatitude(float originalLatitude) {
+    public void setOriginalLatitude(double originalLatitude) {
         this.originalLatitude = originalLatitude;
     }
 
-    public float getInertialNavigation() {
+    public double getInertialNavigation() {
         return inertialNavigation;
     }
 
-    public void setInertialNavigation(float inertialNavigation) {
+    public void setInertialNavigation(double inertialNavigation) {
         this.inertialNavigation = inertialNavigation;
     }
 
-    public float getCalibrationLongitude() {
+    public double getCalibrationLongitude() {
         return calibrationLongitude;
     }
 
-    public void setCalibrationLongitude(float calibrationLongitude) {
+    public void setCalibrationLongitude(double calibrationLongitude) {
         this.calibrationLongitude = calibrationLongitude;
     }
 
-    public float getCalibrationLatitude() {
+    public double getCalibrationLatitude() {
         return calibrationLatitude;
     }
 
-    public void setCalibrationLatitude(float calibrationLatitude) {
+    public void setCalibrationLatitude(double calibrationLatitude) {
         this.calibrationLatitude = calibrationLatitude;
     }
 
-    public float getEcgSignal() {
+    public double getEcgSignal() {
         return ecgSignal;
     }
 
-    public void setEcgSignal(float ecgSignal) {
+    public void setEcgSignal(double ecgSignal) {
         this.ecgSignal = ecgSignal;
     }
 
