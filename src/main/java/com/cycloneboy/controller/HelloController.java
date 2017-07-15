@@ -10,16 +10,17 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-@RequestMapping("/hello")
 public class HelloController {
 
     @RequestMapping("/hello")
-    public String hello(){
-        return "hello user!";
+    public String index(){
+        return "Hello World";
     }
 
     @RequestMapping("/h")
     public String home(){
         return "this is user !";
     }
+
+
 }
