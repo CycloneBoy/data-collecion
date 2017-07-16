@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="fragments/layout">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Good Thymes Virtual Grocery</title>
@@ -7,7 +8,14 @@
 </head>
 <body>
 
-    <div>
+<div layout:fragment="prompt">
+    当前位置：首页 &gt; <em>首页</em>
+</div>
+
+<div layout:fragment="content">
+
+
+<div>
         <img src="../../images/data-collection-logo.png"
              th:src="@{/images/data-collection-logo.png}"
              th:alt-title="数据采集" />
@@ -48,6 +56,8 @@
     <p>现在你正在查看的 <span th:text="'working web application'">模板文件</span> .</p>
 
     <div th:replace="fragments/footer :: footer">@ 2017 The Static Templates</div>
+
+</div>
 </body>
 
 

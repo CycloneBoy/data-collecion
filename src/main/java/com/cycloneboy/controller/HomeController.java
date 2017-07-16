@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 /**
+ * 首页控制器
  * Created by CycloneBoy on 2017/7/15.
  */
 @RestController
@@ -46,11 +46,11 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/subscribe",method = RequestMethod.POST)
-    public String postSubscribe(String email ){
+    public ModelAndView postSubscribe(String email ){
 
         logger.info("订阅的邮件信息: " + email);
 
-        return "/";
+        return new ModelAndView("redirect:/");
     }
 
     @RequestMapping(value = "/userprofile",method = RequestMethod.GET)

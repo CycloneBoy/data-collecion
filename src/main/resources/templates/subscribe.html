@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="fragments/layout">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Good Thymes Virtual Grocery</title>
     <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
 </head>
 <body>
+
+<div layout:fragment="prompt">
+    当前位置：首页 &gt; <em>邮件订阅信息页面</em>
+</div>
+
+<div layout:fragment="content">
+
 
     <h1>订阅邮件信息:</h1>
 
@@ -22,5 +30,6 @@
         <a href="home.html" th:href="@{/}">回到首页</a>
     </p>
 
+</div>
 </body>
 </html>
