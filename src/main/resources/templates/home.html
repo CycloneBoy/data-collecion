@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"  lang="zh">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Good Thymes Virtual Grocery</title>
@@ -14,8 +14,30 @@
     <br/>
     <p>Established locale country: <span th:text="${#locale.country}">中国</span>.</p>
 
+    <p>请选择下列选项：</p>
+    <ol>
+        <li><a href="product/list.html" th:href="@{/product/list}">产品列表</a> </li>
+        <li><a href="order/list.html" th:href="@{/order/list}">订单列表</a> </li>
+        <li><a href="subscribe.html" th:href="@{/subscribe}">订阅我们的邮件列表</a> </li>
+        <li><a href="userprofile.html" th:href="@{/userprofile}">查看用户信息</a> </li>
+    </ol>
+
     <p>Today is: <!--/*@thymesVar id="today" type="ognl"*/-->
     <span th:text="${today}">2017/7/15 22:25</span> </p>
+    <p>
+        Today is: <span th:text="${#calendars.format(date,'dd MMMM yyyy')}" >17 May 211</span>
+    </p>
 
+    <div th:object="${session.user}">
+        <p>Id: <span th:text="*{id}">1111</span> </p>
+        <p>Name: <span th:text="${session.user.name}">Boy</span> </p>
+        <p>Age: <span th:text="*{age} gt 20 ? 'boy ': 'man '"> Man </span> </p>
+    </div>
+
+    <p>现在你正在查看的 <span th:text="'working web application'">模板文件</span> .</p>
+
+    <div th:replace="~{footer::copy}">@ 2017 The Static Templates</div>
 </body>
+
+
 </html>

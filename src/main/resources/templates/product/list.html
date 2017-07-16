@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Good Thymes Virtual Grocery</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+<body>
+
+    <h1>产品列表</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>价格</th>
+                <th>有现货</th>
+                <th>评价</th>
+            </tr>
+        </thead>
+        <tbody th:remove="all-but-first">
+            <!--/*@thymesVar id="prods" type="templates"*/-->
+            <tr th:each="prod : ${prods}" th:class="${prodStat.odd} ? 'odd'">
+                <td th:text="${prod.name}">选择</td>
+                <td th:text="${prod.price}">2.22</td>
+                <td th:text="${prod.inStock}? 是 : 否">是</td>
+                <td>
+                    <span th:text="${#lists.size(prod.comments)}">3</span> 评价
+                    <a href="comments.html"
+                       th:href="@{/product/comments(prodId=${prod.id})}"
+                       th:unless="${#lists.isEmpty(prod.comments)}">查看</a>
+                </td>
+            </tr>
+            <tr class="odd">
+                <td>Blue Lettuce</td>
+                <td>9.55</td>
+                <td>否</td>
+                <td>
+                    <span>0</span> 评价
+                </td>
+            </tr>
+            <tr>
+                <td>Mild Cinnamon</td>
+                <td>1.00</td>
+                <td>是</td>
+                <td>
+                    <span>3</span> 评价
+                    <a href="comments.html">查看</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="../home.html" th:href="@{/}">回到首页</a>
+    </p>
+
+</body>
+</html>

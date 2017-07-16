@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -29,6 +30,8 @@ public class HomeController {
         model.addAttribute("name","CycloneBoy");
         model.addAttribute("today",sdf.format(date));
 
+
+        model.addAttribute("date", Calendar.getInstance());
         session.setAttribute("user",new User(1L,"cycloneboy",24));
 
         return  new ModelAndView("home");

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Good Thymes Virtual Grocery</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+<body>
+
+    <h1>用户信息</h1>
+
+    <div th:object="${session.user}">
+        <p>编号: <span th:text="*{id}">0</span> </p>
+        <p>名字: <span th:text="*{name}">CycloneBoy</span> </p>
+        <p>年龄: <span th:text="*{age}?: 'no age specified'">22</span> </p>
+    </div>
+
+    <p>
+        <a href="../home.html" th:href="@{/}">回到首页</a>
+    </p>
+
+</body>
+</html>

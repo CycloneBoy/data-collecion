@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Good Thymes Virtual Grocery</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+<body>
+
+    <h1>订单列表</h1>
+
+    <table>
+        <tr>
+            <th>时间</th>
+            <th>顾客</th>
+            <th>总数</th>
+        </tr>
+        <tr th:each="o:${orders}" th:class="${oStat.odd}? 'odd'">
+            <td th:text="${#calendars.format(o.date,'yyyy/mm/dd hh:mm:ss')}">2017/7/16 10:37:00</td>
+            <td th:text="${o.customer.name}">CycloneBoy</td>
+            <td th:text="${#aggregates.sum(o.orderLines.{purchasePrice * amount})}">23.22</td>
+            <td>
+                <a href="detail.html" th:href="@{/order/details(orderId=${o.id})}">查看</a>
+            </td>
+        </tr>
+    </table>
+
+    <p>
+        <a href="../home.html" th:href="@{/}">回到首页</a>
+    </p>
+</body>
+</html>
