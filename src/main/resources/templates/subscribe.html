@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Good Thymes Vitrual Grocery</title>
-    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Good Thymes Virtual Grocery</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
 </head>
-
 <body>
+
+    <h1>订阅邮件信息:</h1>
+
     <p>Subscribe to our newsletter</p>
 
-    <form action="subscribe.html" th:action="@{/subscribe}">
+    <form action="subscribe.html" th:action="@{/subscribe}" method="post">
         <fieldset>
             <input type="text" name="email"/>
-            <input type="submit" value="订阅我！" th:value="#{subscribe.submit}"/>
+            <input type="submit" value="订阅我！" th:value="订阅我"/>
         </fieldset>
     </form>
 
     <p>
         <a href="home.html" th:href="@{/}">回到首页</a>
     </p>
+
 </body>
 </html>

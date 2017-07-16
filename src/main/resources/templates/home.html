@@ -7,12 +7,20 @@
 </head>
 <body>
 
+    <div>
+        <img src="../../images/data-collection-logo.png"
+             th:src="@{/images/data-collection-logo.png}"
+             th:alt-title="数据采集" />
+
+    </div>
+
     <p th:text="#{home.welcome (${session.user.name})}">Welcome to our grocery store!</p>
     <br/>
     <!--/*@thymesVar id="name" type="ognl"*/-->
     <p th:text="'Hello! ' + ${name} + ' ' + ${session.user.age} + ' !'">111111</p>
     <br/>
     <p>Established locale country: <span th:text="${#locale.country}">中国</span>.</p>
+    <br/>
 
     <p>请选择下列选项：</p>
     <ol>
@@ -22,21 +30,24 @@
         <li><a href="userprofile.html" th:href="@{/userprofile}">查看用户信息</a> </li>
     </ol>
 
+    <br/>
     <p>Today is: <!--/*@thymesVar id="today" type="ognl"*/-->
     <span th:text="${today}">2017/7/15 22:25</span> </p>
     <p>
         Today is: <span th:text="${#calendars.format(date,'dd MMMM yyyy')}" >17 May 211</span>
     </p>
 
+    <br/>
     <div th:object="${session.user}">
         <p>Id: <span th:text="*{id}">1111</span> </p>
         <p>Name: <span th:text="${session.user.name}">Boy</span> </p>
         <p>Age: <span th:text="*{age} gt 20 ? 'boy ': 'man '"> Man </span> </p>
     </div>
 
+    <br/>
     <p>现在你正在查看的 <span th:text="'working web application'">模板文件</span> .</p>
 
-    <div th:replace="~{footer::copy}">@ 2017 The Static Templates</div>
+    <div th:replace="fragments/footer :: footer">@ 2017 The Static Templates</div>
 </body>
 
 
