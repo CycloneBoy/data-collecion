@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html  lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>hello world</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="fragments/layout">
 <body>
+
+<div layout:fragment="prompt">
+    当前位置：首页 &gt; <em>Hello</em>
+</div>
+
+<div layout:fragment="content">
+
+
     <h1 th:text="${host}">Hello World</h1>
+
+    <!--<h2 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h2>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="注销"/>
+    </form>-->
+
+
+</div>
+
 </body>
 </html>

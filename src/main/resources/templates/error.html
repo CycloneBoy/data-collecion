@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorator="fragments/layout">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Good Thymes Virtual Grocery</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+</head>
+<body>
+
+<div layout:fragment="prompt">
+    当前位置：首页 &gt; <em>错误页面</em>
+</div>
+
+<div layout:fragment="content">
+
+
+
+    <div>
+        <img src="../../images/MissingPage.png"
+             th:src="@{/images/MissingPage.png}"
+             th:alt-title="错误页面" />
+
+    </div>
+    <h1>Error Handler</h1>
+
+    <div th:text="${url}"></div>
+
+    <div th:if="${exception.message}">您访问的页面出现错误 :
+        <div th:text="${exception.message}"></div>
+    </div>
+
+
+</div>
+</body>
+</html>

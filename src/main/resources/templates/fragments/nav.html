@@ -11,6 +11,7 @@
 
         <h6><span class="f-right"></span> 系统管理 </h6>
         <ul>
+            <li><a th:href="@{/}" >回到首页</a></li>
             <li><a th:classappend="${page == 'movie/index' ? 'currentPageNav' : ''}" th:href="@{/movie/index}">电影管理</a></li>
             <li><a th:classappend="${page == 'actor/index' ? 'currentPageNav' : ''}" th:href="@{/actor/index}">演员管理</a></li>
         </ul>
