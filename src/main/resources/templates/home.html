@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.w3.org/1999/xhtml"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
       layout:decorator="fragments/layout">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title>Good Thymes Virtual Grocery</title>
+    <title sec:authentication="name">Good Thymes Virtual Grocery</title>
     <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
+    <link rel="stylesheet" th:href="@{css/signin.css}"/>
 </head>
 <body>
 
@@ -15,13 +17,12 @@
 
 <div layout:fragment="content">
 
-
+<!--
     <div>
         <img src="../../images/data-collection-logo.png"
              th:src="@{/images/data-collection-logo.png}"
              th:alt-title="数据采集" />
-
-    </div>
+    </div>-->
 
     <p th:text="#{home.welcome (${session.user.name})}">Welcome to our grocery store!</p>
     <br/>
@@ -59,6 +60,24 @@
     <br/>
     <h1>欢迎使用Spring Security!</h1>
     <p>点击 <a href="index.html" th:href="@{/index}">这里</a> 打个招呼吧 </p>
+
+    <br/>
+    <div class="container">
+        <div class="starter-template">
+            <h1 th:text="${msg.title}"></h1>
+            <p  th:text="${msg.content}"></p>
+            <div sec:authorize="hasRole('admin')">
+                <p th:text="${msg.extraInfo}"></p>
+            </div>
+            <div sec:authorize="hasRole('user')">
+                <p class="bg-info">无更多显示信息</p>
+            </div>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" class="btn btn-primary" value="注销"/>
+            </form>
+        </div>
+    </div>
+
 
     <div th:replace="fragments/footer :: footer">@ 2017 The Static Templates</div>
 

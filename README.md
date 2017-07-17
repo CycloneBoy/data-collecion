@@ -10,4 +10,4 @@
 3. 使用Thymeleaf模板引擎渲染web视图
 4. 使用Swagger2构建RESTful API
 5. 统一异常处理
-6. 使用Spring Security
+6. 使用Spring Security 进行用户登录管理

@@ -1,5 +1,6 @@
 package com.cycloneboy.controller;
 
+import com.cycloneboy.domain.Msg;
 import com.cycloneboy.domain.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,9 +33,12 @@ public class HomeController {
         model.addAttribute("name","CycloneBoy");
         model.addAttribute("today",sdf.format(date));
 
-
         model.addAttribute("date", Calendar.getInstance());
         session.setAttribute("user",new User(1L,"cycloneboy",24));
+
+        // 添加登录成功后进行跳转后显示地提示信息
+        Msg msg = new Msg("测试标题","测试内容","额外信息,只对管理员显示");
+        model.addAttribute("msg",msg);
 
         return  new ModelAndView("home");
     }
