@@ -12,6 +12,7 @@ buildscript {
 
 apply plugin: 'idea'
 apply plugin: 'java'
+apply plugin: 'git-commit-id-plugin'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
@@ -31,6 +32,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-security')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-mail')
+	//compile('org.springframework.boot:spring-boot-starter-log4j')
 	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')
 	compile('io.springfox:springfox-swagger2:2.6.1')
 	compile('io.springfox:springfox-swagger-ui:2.6.1')

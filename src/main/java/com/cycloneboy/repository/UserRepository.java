@@ -10,10 +10,10 @@ import java.util.List;
  * Created by CycloneBoy on 2017/7/16.
  */
 
-//public interface UserRepository extends JpaRepository<User,Integer>{
-//
-//    public List<User> findAll();
-//
-//    public User findUserById(Integer id);
-//
-//}
+/*public interface UserRepository extends JpaRepository<User,Integer>{
+
+    public List<User> findAll();
+
+    public User findUserById(Integer id);
+
+}*/

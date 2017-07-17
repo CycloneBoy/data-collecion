@@ -25,10 +25,18 @@ spring:
     content-type: text/html
     cache: false
 
+  # 邮件配置
+  mail:
+    host: smtp.qq.com
+    username: 2368311551
+    password: shenglei19921005
+
+
 server:
   tomcat:
     uri-encoding: utf-8
   port: 8080
+
 
 
 

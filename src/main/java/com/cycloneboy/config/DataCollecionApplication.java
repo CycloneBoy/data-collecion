@@ -5,12 +5,16 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@EnableAsync
+@EnableScheduling //启动定时任务的配置
 @RestController
 @SpringBootApplication
-@ComponentScan(basePackages = "com.cycloneboy")
+@ComponentScan(basePackages = "com.cycloneboy.*")
 public class DataCollecionApplication {
 
 	@RequestMapping("/hello123")

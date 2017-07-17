@@ -4,10 +4,11 @@
 
 ---
 
-#包含以下一些模块:
+# 包含以下一些模块:
 1. 基础项目构建，引入web模块，完成一个简单的RESTful API
 2. 构建一个较为复杂的RESTful API以及单元测试
 3. 使用Thymeleaf模板引擎渲染web视图
 4. 使用Swagger2构建RESTful API
 5. 统一异常处理
 6. 使用Spring Security 进行用户登录管理
+7. 使用@Scheduled创建定时任务
