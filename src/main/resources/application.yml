@@ -28,9 +28,11 @@ spring:
   # 邮件配置
   mail:
     host: smtp.qq.com
-    username: 2368311551
-    password:
-
+    username: 2368311551@qq.com
+    #上面获取设置的授权码(POP3/SMTP)  换用你自己在 QQ 邮箱中设置的授权码
+    password: negwxcbdstnmeaib
+    default-encoding: UTF-8
+    protocol: smtp
 
 server:
   tomcat:

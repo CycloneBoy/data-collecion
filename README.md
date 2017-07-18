@@ -12,3 +12,4 @@
 5. 统一异常处理
 6. 使用Spring Security 进行用户登录管理
 7. 使用@Scheduled创建定时任务
+8. 使用JavaMail 发送邮件：简单邮件、带附件邮件、Inline邮件，模板邮件还没有实现
