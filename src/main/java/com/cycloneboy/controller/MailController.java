@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafTemplateAvailab
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.ui.velocity.VelocityEngineUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,7 +26,10 @@ import java.util.Map;
 public class MailController {
 
    @Autowired
-   JavaMailSender mailSender;
+   private JavaMailSender mailSender;
+
+   //@Autowired
+   //private VelocityEngine
 
    @RequestMapping("/send")
     public Object sendMail(){
@@ -127,7 +131,6 @@ public class MailController {
 
            Map<String,Object> model = new HashMap<>();
            model.put("username","cycloneboy");
-
            message.setText("有附件的邮件");
 
            FileSystemResource file = new FileSystemResource(new File

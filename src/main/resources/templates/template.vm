@@ -23,7 +23,7 @@
 
 <div>
     <!--/*@thymesVar id="username" type="templates"*/-->
-    <h1 th:text="'您好 ,' + ${username} +'，这是一封模板邮件！'"> </h1>
+    <h1 th:text="'您好 ,' + ${username} +'，这是一封模板邮件！'"> 您好 ,  ${username} ，这是一封模板邮件！'</h1>
 
 </div>
 
