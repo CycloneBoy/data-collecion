@@ -8,8 +8,11 @@
     <title sec:authentication="name">Good Thymes Virtual Grocery</title>
     <link rel="stylesheet" type="text/css" media="all" href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" />
     <link rel="stylesheet" th:href="@{css/signin.css}"/>
+    <script th:src="@{js/sockjs.min.js}"></script>
+    <script th:src="@{js/stomp.js}"></script>
+    <script th:src="@{js/jquery-3.1.1.js}"></script>
 </head>
-<body>
+<body >
 
 <div layout:fragment="prompt">
     当前位置：首页 &gt; <em>首页</em>
@@ -79,9 +82,11 @@
     </div>
 
 
+
     <div th:replace="fragments/footer :: footer">@ 2017 The Static Templates</div>
 
 </div>
+
 </body>
 
 </html>

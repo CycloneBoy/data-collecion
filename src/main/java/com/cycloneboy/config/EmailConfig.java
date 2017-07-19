@@ -12,8 +12,15 @@ public class EmailConfig {
     /**
      * 发件邮箱
      */
-    @Value("${spring.email.username}")
+    //@Value("${spring.email.username}")
     private String emailFrom;
+
+    public EmailConfig() {
+    }
+
+    public EmailConfig(String emailFrom) {
+        this.emailFrom = emailFrom;
+    }
 
     public String getEmailFrom() {
         return emailFrom;

@@ -3,7 +3,6 @@ package com.cycloneboy.serviceimpl;
 import com.cycloneboy.config.EmailConfig;
 import com.cycloneboy.service.EmailService;
 import javafx.util.Pair;
-import jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
@@ -12,7 +11,6 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import javax.mail.internet.MimeMessage;
-import javax.rmi.CORBA.Tie;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -23,8 +21,8 @@ import java.util.Map;
 @Service
 public class EmailServiceImpl implements EmailService{
 
-    @Autowired
-    private EmailConfig emailConfig;
+    //@Autowired
+    private EmailConfig emailConfig = new EmailConfig("2368311551@qq.com");
 
     @Autowired
     private JavaMailSender mailSender;
